@@ -55,7 +55,8 @@ const removeRowBtn = document.querySelector('.remove-row');
   }
 
   function addNewRow() {
-    const tr = tbody.firstElementChild.cloneNode(true);
+    const isChild = tbody.firstElementChild;
+    const tr = isChild ? isChild.cloneNode(true) : document.createElement('tr');
 
     tbody.insertAdjacentElement('beforeend', tr);
 
